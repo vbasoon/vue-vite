@@ -1,6 +1,6 @@
 export default {
     state: () => ({
-        name: 'Вщи',
+        name: 'Gendolf',
     }),
     getters: {},
     mutations: {
