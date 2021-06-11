@@ -1,17 +1,32 @@
 <template>
-    <div>
-        <h1>Home page</h1>
-        <p>Name in store is: {{ name }}</p>
+    <div class="p-4">
+        <h1 class="font-extrabold text-3xl mb-6">Home page</h1>
+        <p class="mb-6">Name in store is: {{ name }}</p>
+
+        <input
+            v-model="newName"
+            type="text"
+            class="p-2 border border-gray-400 rounded mr-2"
+        />
+        <button @click="saveName" class="text-white bg-indigo-600 rounded p-2">
+            Submit
+        </button>
     </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
 const name = computed(() => {
     return store.state.user.name
 })
+
+const newName = ref('')
+
+function saveName() {
+    store.dispatch('saveName', newName.value)
+}
 </script>
 
 <style></style>

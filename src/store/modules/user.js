@@ -1,11 +1,11 @@
 export default {
     state: () => ({
-        name: 'Bugger',
+        name: 'Вщи',
     }),
     getters: {},
     mutations: {
         SET_NAME(state, payload) {
-            state.mame = payload
+            state.name = payload
         },
     },
     actions: {
